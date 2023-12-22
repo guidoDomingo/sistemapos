@@ -1,0 +1,63 @@
+<?php 
+//incluir la conexion de base de datos
+require "../config/Conexion.php";
+class Negocio{
+
+
+	//implementamos nuestro constructor
+public function __construct(){
+
+}
+
+//metodo insertar regiustro
+public function insertar($nombre,$ndocumento,$documento,$timbrado,$fecha_inicio,$fecha_fin,$direccion,$telefono,$email,$logo,$pais,$ciudad,$nombre_impuesto,$monto_impuesto,$moneda,$simbolo){
+	$sql="INSERT INTO datos_negocio (nombre,ndocumento,documento,timbrado,fecha_inicio,fecha_fin,direccion,telefono,email,logo,pais,ciudad,nombre_impuesto,monto_impuesto,moneda,simbolo,condicion)
+	 VALUES ('$nombre','$ndocumento','$documento','$timbrado','$fecha_inicio','$fecha_fin','$direccion','$telefono','$email','$logo','$pais','$ciudad','$nombre_impuesto','$monto_impuesto','$moneda','$simbolo','1')";
+	return ejecutarConsulta($sql);
+}
+
+public function editar($id_negocio,$nombre,$ndocumento,$documento,$timbrado,$fecha_inicio,$fecha_fin,$direccion,$telefono,$email,$logo,$pais,$ciudad,$nombre_impuesto,$monto_impuesto,$moneda,$simbolo){
+	$sql="UPDATE datos_negocio SET nombre='$nombre',ndocumento='$ndocumento',timbrado='$timbrado',fecha_inicio='$fecha_inicio',fecha_fin='$fecha_fin',documento='$documento',direccion='$direccion',telefono='$telefono',email='$email',logo='$logo',pais='$pais',ciudad='$ciudad',nombre_impuesto='$nombre_impuesto',monto_impuesto='$monto_impuesto',moneda='$moneda',simbolo='$simbolo' 
+	WHERE id_negocio='$id_negocio'";
+	 return ejecutarConsulta($sql);
+}
+
+public function desactivar($id_negocio){
+	$sql="UPDATE datos_negocio SET condicion='0' WHERE id_negocio='$id_negocio'";
+	return ejecutarConsulta($sql);
+}
+public function activar($id_negocio){
+	$sql="UPDATE datos_negocio SET condicion='1' WHERE id_negocio='$id_negocio'";
+	return ejecutarConsulta($sql);
+}
+//metodo para mostrar registros
+public function mostrar($id_negocio){
+	$sql="SELECT * FROM datos_negocio WHERE id_negocio='$id_negocio'";
+	return ejecutarConsultaSimpleFila($sql);
+}
+
+public function mostrar_impuesto(){
+	$sql="SELECT monto_impuesto FROM datos_negocio";
+	return ejecutarConsulta($sql);
+}
+public function nombre_impuesto(){
+	$sql="SELECT nombre_impuesto FROM datos_negocio";
+	return ejecutarConsulta($sql);
+}
+public function mostrar_registros(){
+	$sql="SELECT id_negocio FROM datos_negocio";
+	return ejecutarConsulta($sql);
+}
+public function mostrar_simbolo(){
+	$sql="SELECT simbolo FROM datos_negocio";
+	return ejecutarConsulta($sql);
+}
+//listar registros
+public function listar(){
+	$sql="SELECT * FROM datos_negocio";
+	return ejecutarConsulta($sql);
+}
+
+}
+
+ ?>
