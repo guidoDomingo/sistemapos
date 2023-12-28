@@ -12,6 +12,10 @@ function init() {
     guardaryeditar(e);
   });
 
+  $("#formulariocliente").on("submit", function (e) {
+    guardaryeditarcliente(e);
+  });
+
   //cargamos los items al select cliente
   $.post("../ajax/venta.php?op=selectCliente", function (r) {
     $("#idcliente").html(r);
@@ -48,6 +52,17 @@ function limpiar() {
   //marcamos el primer tipo_documento
   $("#tipo_comprobante").selectpicker("refresh");
   $("#idcliente").selectpicker("refresh");
+}
+
+//funcion limpiar
+function limpiarcliente(){
+
+	$("#nombre").val("");
+	$("#num_documento").val("");
+	$("#direccion").val("");
+	$("#telefono").val("");
+	$("#email").val("");
+	$("#idpersona").val("");
 }
 
 function ShowComprobante() {
@@ -227,6 +242,34 @@ function listarArticulos() {
     })
     .DataTable();
 }
+//funcion para guardaryeditar Cliente
+function guardaryeditarcliente(e){
+  e.preventDefault();//no se activara la accion predeterminada 
+  $("#btnGuardarCliente").prop("disabled",true);
+  var formData=new FormData($("#formulariocliente")[0]);
+  console.log(formData);
+  $.ajax({
+    url: "../ajax/persona.php?op=guardaryeditar",
+    type: "POST",
+    data: formData,
+    contentType: false,
+    processData: false,
+
+    success: function(datos){
+      bootbox.alert(datos);
+      setTimeout(function() {
+         //cargamos los items al select cliente
+          $.post("../ajax/venta.php?op=selectCliente", function (r) {
+            $("#idcliente").html(r);
+            $("#idcliente").selectpicker("refresh");
+          });
+      }, 3000);
+    }
+  });
+  $("#btnGuardarCliente").prop("disabled",false);
+  limpiarcliente();
+}
+
 //funcion para guardaryeditar
 function guardaryeditar(e) {
   e.preventDefault(); //no se activara la accion predeterminada

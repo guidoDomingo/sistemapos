@@ -85,18 +85,24 @@ $pdf->addClientAdresse(utf8_decode($regv->cliente),
 
 //establecemos las columnas que va tener la seccion donde mostramos los detalles de la venta
 $cols=array( "CODIGO"=>23,
-	         "DESCRIPCION"=>78,
-	         "CANTIDAD"=>22,
+	         "DESCRIPCION"=>45,//28 DISPONIBLE
+	         "CANTIDAD"=>20,
 	         "P.U."=>25,
 	         "DSCTO"=>20,
-	         "SUBTOTAL"=>22);
+	         "EXENTAS"=>16,
+	         "5%"=>16,
+	         "10%"=>28,
+          );
 $pdf->addCols( $cols);
 $cols=array( "CODIGO"=>"L",
              "DESCRIPCION"=>"L",
              "CANTIDAD"=>"C",
              "P.U."=>"R",
              "DSCTO"=>"R",
-             "SUBTOTAL"=>"C" );
+             "EXENTAS"=>"C",
+             "5%"=>"C",
+             "10%"=>"C"
+            );
 $pdf->addLineFormat( $cols);
 $pdf->addLineFormat($cols); 
 
@@ -112,7 +118,10 @@ while($regd=$rsptad->fetch_object()){
                  "CANTIDAD"=>"$regd->cantidad",
                  "P.U."=>"$regd->precio_venta",
                  "DSCTO"=>"$regd->descuento",
-                 "SUBTOTAL"=>"$regd->subtotal");
+                 "EXENTAS"=>"0",
+                 "5%"=>"0",
+                 "10%"=>"$regd->subtotal"
+                );
   $size = $pdf->addLine( $y, $line );
   $y += $size +2;
 

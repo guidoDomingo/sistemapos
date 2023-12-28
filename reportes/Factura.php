@@ -438,16 +438,16 @@ function addCols( $tab )
     }
 }
 
-function addLineFormat( $tab )
-{
-    global $format, $colonnes;
-    
-    while ( list( $lib, $pos ) = each ($colonnes) )
+    function addLineFormat( $tab )
     {
-        if ( isset( $tab["$lib"] ) )
-            $format[ $lib ] = $tab["$lib"];
+        global $format, $colonnes;
+        
+        while ( list( $lib, $pos ) = each ($colonnes) )
+        {
+            if ( isset( $tab["$lib"] ) )
+                $format[ $lib ] = $tab["$lib"];
+        }
     }
-}
 
 function lineVert( $tab )
 {
@@ -551,11 +551,11 @@ function addCadreEurosFrancs($impuesto)
     $this->SetFont( "Arial", "", 8);
     $this->SetFont( "Arial", "B", 6);
     $this->SetXY( $r1, $y1+5 );
-    $this->Cell(20,4, "SUBTOTAL", 0, 0, "C");
+    $this->Cell(20,4, "SUBTOTAL", 0, 0, "L");
     $this->SetXY( $r1, $y1+10 );
-    $this->Cell(20,4,  $impuesto, 0,0, "C");
+    $this->Cell(20,4,  $impuesto, 0,0, "L");
     $this->SetXY( $r1, $y1+15 );
-    $this->Cell(20,4, "TOTAL A PAGAR", 0, 0, "C");
+    $this->Cell(20,4, "TOTAL A PAGAR", 0, 0, "L");
 }
 
 // remplit les cadres TVA / Totaux et la remarque
@@ -581,11 +581,11 @@ function addTVAs( $impuesto, $total_venta, $simbolo )
 {
     $this->SetFont('Arial','',8);
     
-    
-    $re  = $this->w - 28;
-    $rei  = $this->w - 28;
-    $ret  = $this->w - 28;
-    $rf  = $this->w - 29;
+
+    $re  = $this->w - 35;
+    $rei  = $this->w - 35;
+    $ret  = $this->w - 35;
+    $rf  = $this->w - 35;
     $y1  = $this->h - 39;
     $this->SetFont( "Arial", "", 8);
     //calculando el subtotal y mostrando

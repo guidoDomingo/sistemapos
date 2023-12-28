@@ -51,7 +51,7 @@ $ciudad = $regn->ciudad;
 			<td align="center">
 				<!--mostramos los datos de la empresa en el doc HTML-->
 				.:: <strong> <?php echo $empresa; ?></strong> ::.<br>
-				<?php echo $ndocumento; ?>: <?php echo 'Ruc:'. $documento; ?><br>
+				<?php echo $ndocumento; ?>: <?php echo ':'. $documento; ?><br>
 				<?php echo 'Direc:'.$direccion; ?><br>
 				<?php echo 'Telf:'. $telefono; ?><br>
 			</td>
@@ -98,7 +98,7 @@ $ciudad = $regn->ciudad;
 		 	echo "<tr>";
 		 	echo "<td>".$regd->cantidad."</td>";
 		 	echo "<td>".$regd->articulo."</td>";
-		 	echo "<td align='right'>S/. ".$regd->subtotal."</td>";
+		 	echo "<td align='right'>Gs/. ".$regd->subtotal."</td>";
 		 	echo "</tr>";
 		 	$cantidad+=$regd->cantidad;
 		 } 
@@ -108,7 +108,7 @@ $ciudad = $regn->ciudad;
 		<tr>
 			<td>&nbsp;</td>
 			<td align="right"><b>TOTAL:</b></td>
-			<td align="right"><b>S/. <?php echo $reg->total_venta; ?></b></td>
+			<td align="right"><b>Gs/. <?php echo $reg->total_venta; ?></b></td>
 		</tr>
 		<tr>
 			<td colspan="3">N° de articulos: <?php echo $cantidad; ?> </td>

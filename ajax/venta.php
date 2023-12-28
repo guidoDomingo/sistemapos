@@ -189,10 +189,12 @@ switch ($_GET["op"]) {
 		while ($reg = $rspta->fetch_object()) {
 
 			$url = '../reportes/exFactura.php?id=';
+			$urlticket = '../reportes/exTicket.php?id=';
 
 			$data[] = array(
 				"0" => (($reg->estado == 'Aceptado') ? '<button class="btn btn-warning btn-xs" onclick="mostrar(' . $reg->idventa . ')"><i class="fa fa-eye"></i></button>' . ' ' . '<button class="btn btn-danger btn-xs" onclick="anular(' . $reg->idventa . ')"><i class="fa fa-close"></i></button>' : '<button class="btn btn-warning btn-xs" onclick="mostrar(' . $reg->idventa . ')"><i class="fa fa-eye"></i></button>') .
-					'<a target="_blank" href="' . $url . $reg->idventa . '"> <button class="btn btn-info btn-xs"><i class="fa fa-file"></i></button></a>',
+					'<a target="_blank" href="' . $url . $reg->idventa . '"> <button class="btn btn-info btn-xs"><i class="fa fa-file"> FAC</i></button></a>'.
+					'<a target="_blank" href="' . $urlticket . $reg->idventa . '"> <button class="btn btn-info btn-xs"><i class="fa fa-file"> TICKET</i></button></a>',
 				"1" => $reg->fecha,
 				"2" => $reg->cliente,
 				"3" => $reg->usuario,

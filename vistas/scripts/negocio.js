@@ -130,6 +130,9 @@ function mostrar(id_negocio){
 			$("#nombre").val(data.nombre);
 			$("#ndocumento").val(data.ndocumento);
 			$("#documento").val(data.documento);
+			$("#fecha_inicio").val(data.fecha_inicio);
+			$("#fecha_fin").val(data.fecha_fin);
+			$("#timbrado").val(data.timbrado);
 			$("#direccion").val(data.direccion);
 			$("#telefono").val(data.telefono);
 			$("#email").val(data.email);
