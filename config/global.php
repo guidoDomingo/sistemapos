@@ -3,14 +3,14 @@
 define("DB_HOST", "localhost");
 
 // nombre de la base de datos
-define("DB_NAME", "pos");
+define("DB_NAME", "posventas");
 
 
 //nombre de usuario de base de datos
-define("DB_USERNAME", "root");
+define("DB_USERNAME", "guido");
 
 //conraseña del usuario de base de datos
-define("DB_PASSWORD", "");
+define("DB_PASSWORD", "Guido123");
 
 //codificacion de caracteres
 define("DB_ENCODE", "utf8");
