@@ -36,8 +36,8 @@
               escribanos:
             </div>
             <ul>
-              <li><i class="fa fa-envelope"></i> Correo: soporte@compartiendocodigos.com</li>
-              <li><i class="fa fa-whatsapp"></i> WhatsApp: +51 983 680 492</li>
+              <li><i class="fa fa-envelope"></i> Correo: ruizbenitezgui11@gmail.com</li>
+              <li><i class="fa fa-whatsapp"></i> WhatsApp: 0982 313 358</li>
             </ul>
             <!-- /.box-body -->
           </div>
@@ -60,10 +60,10 @@
               Para sugerencia de cambios en el sistema o implementación de nuevos módulos
               escribanos:
               <ul>
-                <li><i class="fa fa-envelope"></i> Correo: info@compartiendocodigos.com</li>
-              <li><i class="fa fa-whatsapp"></i> WhatsApp: +51 983 680 492</li>
+                <li><i class="fa fa-envelope"></i> Correo: ruizbenitezgui11@gmail.com</li>
+              <li><i class="fa fa-whatsapp"></i> WhatsApp: 0982 313 358</li>
               </ul>
-              Todo correo de este deberá ser con el asunto "Sugerencia-sisventas"
+              Todo correo de este deberá ser con el asunto "Sugerencia"
             </div>
             <!-- /.box-body -->
           </div>

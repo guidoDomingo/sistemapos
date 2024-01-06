@@ -50,9 +50,9 @@ require_once "../modelos/Negocio.php";
     <!-- Logo -->
     <a href="escritorio.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>SIS</b> V</span>
+      <span class="logo-mini"><b>POS</b> V</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>SIS</b> VENTAS</span>
+      <span class="logo-lg"><b>POS</b> VENTAS</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -228,7 +228,7 @@ if ($_SESSION['consultav']==1) {
 }
         ?>     
         <li><a href="ayuda.php"><i class="fa fa-question-circle"></i> <span>Ayuda</span><small class="label pull-right bg-yellow">PDF</small></a></li>
-        <li><a target="_blanck" href="https://www.compartiendocodigos.com/"><i class="fa  fa-exclamation-circle"></i> <span>Acerca de</span><small class="label pull-right bg-yellow">ComCod</small></a></li>
+        <!-- <li><a target="_blanck" href="https://www.compartiendocodigos.com/"><i class="fa  fa-exclamation-circle"></i> <span>Acerca de</span><small class="label pull-right bg-yellow">ComCod</small></a></li> -->
         <li><a href="version.php"><i class="fa  fa-exclamation-circle"></i> <span>Version</span><small class="label pull-right bg-green">0.1.4</small></a></li>
         
       </ul>
