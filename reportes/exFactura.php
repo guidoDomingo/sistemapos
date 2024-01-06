@@ -141,8 +141,8 @@ $con_letra=strtoupper(convertirNumeroLetra($total,$moneda));
 $pdf->addCadreTVAs("SON ".$con_letra,55);
 
 //mostramos el impuesto
-$pdf->addTVAs( $regv->impuesto, $regv->total_venta, $new_simbolo);
-$pdf->addCadreEurosFrancs($nombre_impuesto." $regv->impuesto %");
+$pdf->addTVAs( $monto_impuesto + 1, $regv->total_venta, $new_simbolo);
+$pdf->addCadreEurosFrancs($nombre_impuesto." $monto_impuesto %");
 $pdf->Output('Reporte de Venta' ,'I');
 
 	}else{

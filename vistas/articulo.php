@@ -64,7 +64,7 @@ if ($_SESSION['almacen']==1) {
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Stock(*)</label>
-      <input class="form-control" type="number" name="stock" id="stock" required>
+      <input class="form-control" type="number" name="stock" id="stock"  disabled>
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Descripcion</label>

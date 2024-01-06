@@ -592,16 +592,17 @@ function addTVAs( $impuesto, $total_venta, $simbolo )
     $this->SetXY( $re, $y1+5 );
     $length = $this->GetStringWidth( $simbolo.' ');
     $this->Cell( $length, 2, $simbolo.' ',0,0,'R');
-    $ivgimp=$impuesto+100;
-    $igv_total=$ivgimp/100;
-    $total=$total_venta/$igv_total;
-    $length = $this->GetStringWidth(  number_format((float)$total,2,'.',''),0,0,'L');
-    $this->Cell( $length, 2,  number_format((float)$total,2,'.',''),0,0,'L');
+    $ivgimp=$impuesto;
+    $igv_total=$ivgimp;
+    $iva=$total_venta/$igv_total;
+    $subtotal=$total_venta-$iva; 
+    $length = $this->GetStringWidth(  number_format((float)$subtotal,2,'.',''),0,0,'L');
+    $this->Cell( $length, 2,  number_format((float)$subtotal,2,'.',''),0,0,'L');
     // calculando el igv y mostrando
     $this->SetXY( $rei, $y1+10 );
     $length = $this->GetStringWidth( $simbolo.' ' );
     $this->Cell( $length, 2, $simbolo.' ',0,0,'R');
-    $igv=$total_venta-$total;   
+    $igv=$iva;   
     $length = $this->GetStringWidth( number_format((float)$igv,2,'.',''),0,0,'L');
     $this->Cell( $length, 2,  number_format((float)$igv,2,'.',''),0,0,'L');
     // mostrando el total
